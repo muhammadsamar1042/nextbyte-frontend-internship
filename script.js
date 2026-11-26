@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.querySelector("#contact form");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (e) {
-            e.preventDefault(); 
-
-            const name = document.querySelector("#name").value.trim();
-            const email = document.querySelector("#email").value.trim();
-
-            if (name === "" || email === "") {
-                alert("Please fill in all fields before submitting!");
-            } else {
-                alert(`Thank you, ${name}! Your message has been received successfully.`);
-                contactForm.reset(); 
-            }
+    const headerTitle = document.querySelector("header h1");
+    if (headerTitle) {
+        headerTitle.style.cursor = "pointer";
+        headerTitle.addEventListener("click", function () {
+            alert("Welcome to NextByte Studio Internship Project!");
         });
     }
+
+    const listItems = document.querySelectorAll("#services li");
+    listItems.forEach(function (item) {
+        item.style.cursor = "pointer";
+        item.addEventListener("click", function () {
+            alert("Selected Focus Area: " + item.textContent);
+        });
+    });
 });
